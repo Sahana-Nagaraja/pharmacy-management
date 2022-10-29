@@ -8,8 +8,8 @@ import java.util.List;
 @Service
 public interface BillingService {
 
-    Supplier findById(Integer billing_id);
+    Billing findById(Integer billing_id);
 
-    Supplier saveBill(Billing billing);
+    Billing saveBill(Billing billing);
 
 }
