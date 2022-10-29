@@ -1,7 +1,6 @@
 package com.bits.dbms.assignment.pharmacy.service;
 
 import com.bits.dbms.assignment.pharmacy.dto.SupplierOrderRequestDTO;
-import com.bits.dbms.assignment.pharmacy.entity.Product;
 import com.bits.dbms.assignment.pharmacy.entity.Supplier;
 import com.bits.dbms.assignment.pharmacy.repository.SupplierRepository;
 import org.springframework.stereotype.Service;
@@ -69,6 +68,8 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public HashMap<Integer,Integer> orderProductsFromSupplier(SupplierOrderRequestDTO orderRequestDTO) {
         // logic to fetch products from supplier
+        Supplier supplier = supplierRepository.getReferenceById(orderRequestDTO.getSupplier_id());
+
         return new HashMap<>();
     }
 }

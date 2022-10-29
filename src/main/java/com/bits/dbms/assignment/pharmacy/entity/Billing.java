@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,9 +31,9 @@ public class Billing {
     private String payment_mode;
     private Date billing_date;
     private String created_by;
-    private Date created_on;
+    @CreationTimestamp private Date created_on;
     private String modified_by;
-    private Date modified_on;
+    @UpdateTimestamp private Date modified_on;
 }
 
 

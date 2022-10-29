@@ -46,7 +46,7 @@ public class SupplierController {
         return "Deleted Successfully";
     }
 
-    @PostMapping
+    @PostMapping("/inventory")
     public HashMap<Integer,Integer> orderProductsFromSupplier(@Validated @RequestBody SupplierOrderRequestDTO orderRequestDTO) {
         return supplierService.orderProductsFromSupplier(orderRequestDTO);
     }

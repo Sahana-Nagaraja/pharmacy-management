@@ -1,6 +1,7 @@
 package com.bits.dbms.assignment.pharmacy.service;
 
 import com.bits.dbms.assignment.pharmacy.entity.Product;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.bits.dbms.assignment.pharmacy.repository.ProductRepository;
 
@@ -8,19 +9,25 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ProductServiceImpl implements ProductService {
+
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     private ProductRepository productRepository;
     public List<Product> findAllProducts() {
         return productRepository.findAll();
     }
 
-    public Product findProductById(Integer id) {
+    public Product findProductById(Long id) {
         Optional<Product> product = productRepository.findById(id);
         return product.orElse(null);
     }
 
     public Product saveProduct(Product product) {
+        System.out.println("*********Here ");
         product.setCreated_on(new Date());
         product.setModified_on(null);
         product.setModified_by(null);
@@ -44,7 +51,7 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    public void deleteProductById(Integer id) {
+    public void deleteProductById(Long id) {
         productRepository.deleteById(id);
     }
 }

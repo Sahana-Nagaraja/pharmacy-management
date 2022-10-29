@@ -1,12 +1,45 @@
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\PharmacyApplication.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\service\ProductService.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\service\ProductServiceImpl.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\controller\SupplierController.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\service\SupplierServiceImpl.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\entity\Billing.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\repository\SupplierRepository.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\service\SupplierService.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\entity\Store.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\entity\Product.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\entity\Config.java
-C:\Users\gs1-vijayp\Desktop\M.Tech Software Engineering\Sem2\DDA\Assingment\pharmacy-management\src\main\java\com\bits\dbms\assignment\pharmacy\entity\Supplier.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/BillingRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/ProductService.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/OrderRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/SupplierService.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/SupplierServiceImpl.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Config.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Product.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/dto/SupplierOrderRequestDTO.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/InventoryService.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Billing.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Address.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/BillingServiceImpl.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/BillingDetailsRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/CustomerService.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/StoreRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/OrderDetails.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/SupplierRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/OfferRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/BillingDetails.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/AddressRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/controller/SupplierController.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/OrderDetailsRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Order.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Customer.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Inventory.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/User.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/CustomerServiceImpl.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/ProductRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/UserRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Store.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/BillingService.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/PharmacyApplication.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/controller/CustomerController.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/InventoryServiceImpl.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/CustomerRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/ConfigRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/InventoryRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Offer.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Category.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/controller/ProductController.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/service/ProductServiceImpl.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/repository/CategoryRepository.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/controller/BillingController.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/entity/Supplier.java
+/Users/nsahana/pharmacy-management/src/main/java/com/bits/dbms/assignment/pharmacy/dto/BillingRequestDTO.java

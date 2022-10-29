@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,8 +27,10 @@ public class Config {
     private String key;
     private String value;
     private String created_by;
+    @CreationTimestamp
     private Date created_on;
     private String modified_by;
+    @UpdateTimestamp
     private Date modified_on;
 }
 
