@@ -1,5 +1,6 @@
 package com.bits.dbms.assignment.pharmacy.service;
 
+import com.bits.dbms.assignment.pharmacy.entity.Product;
 import com.bits.dbms.assignment.pharmacy.entity.Supplier;
 
 import java.util.List;
