@@ -11,24 +11,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity(name = "config")
+@Entity(name = "inventory")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Config {
+public class Inventory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer config_id;
-    private String config_category;
-    private String key;
-    private String value;
+    private Integer inventory_id;
+    private Integer product_id;
+    private Integer quantity;
+    private Date purchased_on;
+    private Date manufactured_on;
+    private Integer order_id;
+    private Integer unit_purchase_price;
+    private Integer unit_selling_price;
     private String created_by;
     private Date created_on;
     private String modified_by;
     private Date modified_on;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
