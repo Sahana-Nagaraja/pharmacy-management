@@ -1,10 +1,13 @@
 package com.bits.dbms.assignment.pharmacy.controller;
 
+import com.bits.dbms.assignment.pharmacy.dto.SupplierOrderRequestDTO;
+import com.bits.dbms.assignment.pharmacy.entity.Product;
 import com.bits.dbms.assignment.pharmacy.entity.Supplier;
 import com.bits.dbms.assignment.pharmacy.service.SupplierService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -41,5 +44,10 @@ public class SupplierController {
     public String deleteSupplierById(@PathVariable(value = "id") Integer id) {
         supplierService.deleteSupplierById(id);
         return "Deleted Successfully";
+    }
+
+    @PostMapping
+    public HashMap<Integer,Integer> orderProductsFromSupplier(@Validated @RequestBody SupplierOrderRequestDTO orderRequestDTO) {
+        return supplierService.orderProductsFromSupplier(orderRequestDTO);
     }
 }

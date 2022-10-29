@@ -1,13 +1,12 @@
 package com.bits.dbms.assignment.pharmacy.service;
 
+import com.bits.dbms.assignment.pharmacy.dto.SupplierOrderRequestDTO;
+import com.bits.dbms.assignment.pharmacy.entity.Product;
 import com.bits.dbms.assignment.pharmacy.entity.Supplier;
 import com.bits.dbms.assignment.pharmacy.repository.SupplierRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class SupplierServiceImpl implements SupplierService {
@@ -65,5 +64,11 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public void deleteSupplierById(Integer id) {
         supplierRepository.deleteById(id);
+    }
+
+    @Override
+    public HashMap<Integer,Integer> orderProductsFromSupplier(SupplierOrderRequestDTO orderRequestDTO) {
+        // logic to fetch products from supplier
+        return new HashMap<>();
     }
 }

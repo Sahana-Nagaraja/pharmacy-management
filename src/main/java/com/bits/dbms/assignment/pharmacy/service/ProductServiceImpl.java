@@ -1,14 +1,16 @@
 package com.bits.dbms.assignment.pharmacy.service;
 
 import com.bits.dbms.assignment.pharmacy.entity.Product;
-import com.bits.dbms.assignment.pharmacy.entity.Supplier;
 import org.springframework.transaction.annotation.Transactional;
+import com.bits.dbms.assignment.pharmacy.repository.ProductRepository;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 public class ProductServiceImpl implements ProductService {
+
+    private ProductRepository productRepository;
     public List<Product> findAllProducts() {
         return productRepository.findAll();
     }
@@ -35,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
             product.setProduct_name(updateProduct.getProduct_name());
             product.setThreshold_qty(updateProduct.getThreshold_qty());
             product.setModified_on(new Date());
-            return productRepository.merge(product);
+            return productRepository.save(product);
         }
         else {
             return saveProduct(updateProduct);
