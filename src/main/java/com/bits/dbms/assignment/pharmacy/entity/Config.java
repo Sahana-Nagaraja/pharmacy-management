@@ -11,22 +11,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity(name = "supplier")
+@Entity(name = "config")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Supplier {
+public class Config {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer supplier_id;
-    private String supplier_name;
-    private Integer address_id;
-    private Integer mobile_no;
-    private String email_id;
+    private Integer billing_id;
+    private Integer customer_id;
+    private String store_id;
+    private String offer_id;
+    private Integer discount_amount;
+    private Integer net_amount;
+    private String payment_mode;
+    private Date billing_date;
     private String created_by;
     private Date created_on;
     private String modified_by;
     private Date modified_on;
 }
+
+
+
+
+
+
+
+
+
