@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/bits/dbms/assignment/pharmacy/controller/ProductController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/bits/dbms/assignment/pharmacy/service/ProductService.java">
           <value>
             <set />
