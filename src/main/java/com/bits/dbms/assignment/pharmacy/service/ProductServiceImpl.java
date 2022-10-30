@@ -27,10 +27,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public Product saveProduct(Product product) {
-        System.out.println("*********Here ");
         product.setCreated_on(new Date());
-        product.setModified_on(null);
-        product.setModified_by(null);
+        product.setModified_on(new Date());
+        product.setModified_by(product.getModified_by());
         return productRepository.save(product);
     }
 
