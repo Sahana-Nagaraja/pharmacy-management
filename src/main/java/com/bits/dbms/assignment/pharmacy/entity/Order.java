@@ -8,10 +8,18 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "order")
+@NamedStoredProcedureQuery(
+        name = "get_total_orders",
+        procedureName = "get_total_orders",
+        parameters = {
+                @StoredProcedureParameter(mode = ParameterMode.IN, type = Long.class, name = "store_id_in"),
+                @StoredProcedureParameter(mode = ParameterMode.OUT, type = Long.class, name = "order_count")
+        }
+)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,16 +27,17 @@ import java.util.Date;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer order_id;
-    private Date order_date;
-    private String order_status;
-    private Integer store_id;
-    private String supplier_id;
-    private String created_by;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long orderId;
+    private LocalDateTime orderDate;
+    private String orderStatus;
+    private Integer storeId;
+    private Integer supplierId;
+    private Integer createdBy;
+    private LocalDateTime deliveredOn;
     @CreationTimestamp
-    private Date created_on;
-    private String modified_by;
+    private LocalDateTime createdOn;
+    private Integer modifiedBy;
     @UpdateTimestamp
-    private Date modified_on;
+    private LocalDateTime modifiedOn;
 }
