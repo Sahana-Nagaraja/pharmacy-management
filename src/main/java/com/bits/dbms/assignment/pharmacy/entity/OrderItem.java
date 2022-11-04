@@ -1,27 +1,28 @@
 package com.bits.dbms.assignment.pharmacy.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order_details")
+@Table(name = "order_item")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OrderDetails {
+public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderDetailsId;
-    private Long orderId;
+    private Long orderItemId;
     private Integer productId;
     private Integer quantity;
     private Integer unitPrice;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "order_id")
+    @JsonIgnore
+    private Order orderObj;
 }
 
 

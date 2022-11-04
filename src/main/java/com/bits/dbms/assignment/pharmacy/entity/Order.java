@@ -1,14 +1,12 @@
 package com.bits.dbms.assignment.pharmacy.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "order")
@@ -28,11 +26,14 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private Long orderId;
     private LocalDateTime orderDate;
     private String orderStatus;
     private Integer storeId;
     private Integer supplierId;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "orderObj")
+    private Set<OrderItem> orderItems;
     private Integer createdBy;
     private LocalDateTime deliveredOn;
     @CreationTimestamp

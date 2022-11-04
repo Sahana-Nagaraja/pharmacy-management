@@ -2,7 +2,7 @@ package com.bits.dbms.assignment.pharmacy.service;
 
 import com.bits.dbms.assignment.pharmacy.dto.OrderRequestDTO;
 import com.bits.dbms.assignment.pharmacy.entity.Order;
-import com.bits.dbms.assignment.pharmacy.entity.OrderDetails;
+import com.bits.dbms.assignment.pharmacy.entity.OrderItem;
 import com.bits.dbms.assignment.pharmacy.repository.OrderDetailsRepository;
 import com.bits.dbms.assignment.pharmacy.repository.OrderRepository;
 import org.springframework.stereotype.Service;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -43,18 +44,25 @@ public class OrderServiceImpl implements OrderService {
                 .modifiedBy(orderRequestDTO.getModifiedBy())
                 .build();
         Order savedOrder = orderRepository.save(order);
-        OrderDetails orderDetails = OrderDetails.builder()
-                .orderId(savedOrder.getOrderId())
-                .productId(orderRequestDTO.getProductId())
-                .quantity(orderRequestDTO.getQuantity())
-                .unitPrice(fetchUnitPrice(orderRequestDTO.getProductId()))
-                .build();
-        orderDetailsRepository.save(orderDetails);
+        Set<OrderItem> orderItems = getOrderItemsWithPrice(orderRequestDTO.getOrderItems());
+        for (OrderItem oi : orderItems) {
+            oi.setOrderObj(savedOrder);
+        }
+        orderItems.forEach(this::saveOrderItem);
         return savedOrder;
     }
 
-    private Integer fetchUnitPrice(Integer product_id) {
+    private void saveOrderItem(OrderItem oi) {
+        orderDetailsRepository.save(oi);
+    }
+
+    private Set<OrderItem> getOrderItemsWithPrice(Set<OrderItem> orderItems) {
+        orderItems.forEach(oi -> oi.setUnitPrice(fetchUnitPrice(oi.getProductId())));
+        return orderItems;
+    }
+
+    private Integer fetchUnitPrice(Integer productId) {
         //fetch from inventory
-        return 100;
+        return ThreadLocalRandom.current().nextInt(100, 1000);
     }
 }
