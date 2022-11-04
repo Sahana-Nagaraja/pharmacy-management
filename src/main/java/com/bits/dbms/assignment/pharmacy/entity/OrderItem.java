@@ -7,7 +7,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "order_item")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

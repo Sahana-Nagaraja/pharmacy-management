@@ -29,9 +29,9 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public Supplier saveSupplier(Supplier supplier) {
-        supplier.setCreated_on(new Date());
-        supplier.setModified_on(null);
-        supplier.setModified_by(null);
+        supplier.setCreatedOn(new Date());
+        supplier.setModifiedOn(null);
+        supplier.setModifiedBy(null);
         return supplierRepository.save(supplier);
     }
 
@@ -40,19 +40,19 @@ public class SupplierServiceImpl implements SupplierService {
         Optional<Supplier> optionalSupplier = supplierRepository.findById(id);
         if (optionalSupplier.isPresent()) {
             Supplier supplierDB = optionalSupplier.get();
-            if (Objects.nonNull(supplier.getSupplier_name())) {
-                supplierDB.setSupplier_name(supplier.getSupplier_name());
+            if (Objects.nonNull(supplier.getSupplierName())) {
+                supplierDB.setSupplierName(supplier.getSupplierName());
             }
-            if (Objects.nonNull(supplier.getAddress_id())) {
-                supplierDB.setAddress_id(supplier.getAddress_id());
+            if (Objects.nonNull(supplier.getAddressId())) {
+                supplierDB.setAddressId(supplier.getAddressId());
             }
-            if (Objects.nonNull(supplier.getMobile_no())) {
-                supplierDB.setMobile_no(supplier.getMobile_no());
+            if (Objects.nonNull(supplier.getMobileNo())) {
+                supplierDB.setMobileNo(supplier.getMobileNo());
             }
-            if (Objects.nonNull(supplier.getEmail_id())) {
-                supplierDB.setEmail_id(supplier.getEmail_id());
+            if (Objects.nonNull(supplier.getEmailId())) {
+                supplierDB.setEmailId(supplier.getEmailId());
             }
-            supplierDB.setModified_on(new Date());
+            supplierDB.setModifiedOn(new Date());
             supplierRepository.save(supplierDB);
             return supplierDB;
         } else {

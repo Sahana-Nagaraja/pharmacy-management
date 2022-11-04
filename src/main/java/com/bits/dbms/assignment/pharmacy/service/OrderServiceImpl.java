@@ -25,7 +25,6 @@ public class OrderServiceImpl implements OrderService {
         this.orderDetailsRepository = orderDetailsRepository;
     }
 
-
     @Override
     public Order findById(Long orderId) {
         Optional<Order> optionalOrder = orderRepository.findById(orderId);
@@ -48,12 +47,10 @@ public class OrderServiceImpl implements OrderService {
         for (OrderItem oi : orderItems) {
             oi.setOrderObj(savedOrder);
         }
-        orderItems.forEach(this::saveOrderItem);
+        List<OrderItem> savedOrderItemsList = orderDetailsRepository.saveAll(orderItems);
+        Set<OrderItem> savedOrderItems = new HashSet<>(savedOrderItemsList);
+        savedOrder.setOrderItems(savedOrderItems);
         return savedOrder;
-    }
-
-    private void saveOrderItem(OrderItem oi) {
-        orderDetailsRepository.save(oi);
     }
 
     private Set<OrderItem> getOrderItemsWithPrice(Set<OrderItem> orderItems) {

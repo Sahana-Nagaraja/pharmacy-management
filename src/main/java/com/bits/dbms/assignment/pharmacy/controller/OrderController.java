@@ -32,7 +32,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public Order saveOrder(@Validated @RequestBody OrderRequestDTO orderRequestDTO) {
+    public Order createOrder(@Validated @RequestBody OrderRequestDTO orderRequestDTO) {
         return orderService.createOrder(orderRequestDTO);
     }
 

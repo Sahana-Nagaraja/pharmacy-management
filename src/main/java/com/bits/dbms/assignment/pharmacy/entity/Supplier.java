@@ -20,15 +20,15 @@ public class Supplier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer supplier_id;
-    private String supplier_name;
-    private Integer address_id;
-    private Integer mobile_no;
-    private String email_id;
-    private String created_by;
+    private Integer supplierId;
+    private String supplierName;
+    private Integer addressId;
+    private Integer mobileNo;
+    private String emailId;
+    private String createdBy;
     @CreationTimestamp
-    private Date created_on;
-    private String modified_by;
+    private Date createdOn;
+    private String modifiedBy;
     @UpdateTimestamp
-    private Date modified_on;
+    private Date modifiedOn;
 }

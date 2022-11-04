@@ -18,7 +18,8 @@ import java.util.Set;
                 @StoredProcedureParameter(mode = ParameterMode.OUT, type = Long.class, name = "order_count")
         }
 )
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
